@@ -1,0 +1,73 @@
+Markdown 语法介绍  
+
+
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+
+# 锚点  
+[访问链接](#user-content-锚点)
+
+> 这是第一级引用。
+>
+> > 这是第二级引用。
+>
+> 现在回到第一级引用。
+
+> ## 这是一个标题。
+> 1. 这是第一行列表项。
+> 2. 这是第二行列表项。
+>
+> 给出一些例子代码：
+>
+> return shell_exec(`echo $input | $markdown_script`);
+
+
+- Red
+- Green
+- Blue
+
+
+*  Coding.net有以下主要功能:
+    > 代码托管平台
+    > 在线运行环境    
+    > 代码质量监控    
+    > 项目管理平台
+
+- [ ] 不勾选
+- [x] 勾选
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
+*Coding，让开发更简单*
+_Coding，让开发更简单_
+
+**Coding，让开发更简单**
+__Coding，让开发更简单__
+
+[百度一下，你就知道](www.baidu.com)
+
+
+First Header | Second Header | Third Header
+------------ | ------------- | ------------
+Content Cell | Content Cell  | Content Cell
+Content Cell | Content Cell  | Content Cell
+
+
+First Header | Second Header | Third Header
+:----------- | :-----------: | -----------:
+Left         | Center        | Right
+Left         | Center        | Right
+
+这是分隔线上部分内容  
+---
+这是分隔线上部分内容  
+
+![](http://ouz2us6un.bkt.clouddn.com/19-1-8/69721801.jpg)

@@ -1,0 +1,19 @@
+﻿@model Microsoft.EntityFrameworkCore.DbSet<Blog.Models.BlogModel>
+@{
+    ViewData["Title"] = "HomeView";
+    Layout = "~/Views/Shared/_MainBody.cshtml";
+}
+
+<h2>HomeView</h2>
+@*<section id="markdown">
+        <pre>
+    </pre>
+
+    </section>*@
+@foreach (var blog in Model)
+{
+<section id="markdown" class="markdown">
+    @blog.MainBody
+</section>
+}
+
