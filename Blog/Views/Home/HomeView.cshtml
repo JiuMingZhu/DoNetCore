@@ -20,8 +20,8 @@
         @{
             if (blog.MainBody.Contains("<!--more-->"))
             {
-                blog.MainBody = blog.MainBody.Split("<!--more-->")[0];
-                readMore = true;
+                //blog.MainBody = blog.MainBody.Split("<!--more-->")[0];
+                //readMore = true;
             }
             blog.MainBody = "\r\n" + blog.MainBody;//神奇的开头空格，先给个换行
         }
