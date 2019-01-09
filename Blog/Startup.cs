@@ -58,6 +58,7 @@ namespace Blog
             // Set up custom content types - associating file extension to MIME type
             var provider = new FileExtensionContentTypeProvider();
             provider.Mappings.Add(".moc", "application/x-msdownload");
+            provider.Mappings.Add(".mtn", "application/x-msdownload");
             app.UseStaticFiles(new StaticFileOptions
             {
                 ContentTypeProvider = provider

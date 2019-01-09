@@ -17,6 +17,8 @@ namespace Blog.Models
         public string Author { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime LastEditTime { get; set; }
+        public string Tag { get; set; }
+        public string Category { get; set; }
         public string MainBody { get; set; }
     }
 }

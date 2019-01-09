@@ -5,15 +5,35 @@
 }
 
 <h2>HomeView</h2>
-@*<section id="markdown">
-        <pre>
-    </pre>
-
-    </section>*@
 @foreach (var blog in Model)
 {
-<section id="markdown" class="markdown">
-    @blog.MainBody
-</section>
+    var readMore = false;
+    <section>
+        <p>@blog.Title</p>
+        <p>@blog.SubTitle</p>
+        <p>@blog.Author</p>
+        <p>@blog.CreateTime</p>
+        <p>@blog.LastEditTime</p>
+        <p>@blog.Tag</p>
+        <p>@blog.Category</p>
+        <pre class="markdown">
+        @{
+            if (blog.MainBody.Contains("<!--more-->"))
+            {
+                blog.MainBody = blog.MainBody.Split("<!--more-->")[0];
+                readMore = true;
+            }
+            blog.MainBody = "\r\n" + blog.MainBody;//神奇的开头空格，先给个换行
+        }
+        @blog.MainBody
+        </pre>
+        @{
+            if (readMore)
+            {
+                <a href="#">阅读更多</a>
+            }
+        }
+    </section>
+    readMore = false;
 }
 
