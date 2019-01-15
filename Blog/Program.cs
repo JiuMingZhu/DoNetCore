@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Blog.Common.Tools;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +15,7 @@ namespace Blog
     {
         public static void Main(string[] args)
         {
-            //test();
+            test();
             CreateWebHostBuilder(args).Build().Run();
         }
 
@@ -23,20 +24,30 @@ namespace Blog
                 .UseStartup<Startup>();
 
         public static void test(){
-            Models.DBContext ctx = new Models.DBContext();
-            DateTime dateTime = DateTime.Now;
-            var testData = System.IO.File.ReadAllText(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "testData.txt"));
-            Models.BlogModel blog = new Models.BlogModel()
-            {
-                Title = "Markdown测试",
-                SubTitle = "测试",
-                Author = "小明",
-                CreateTime = dateTime,
-                LastEditTime = dateTime,
-                MainBody = testData
-            };
-            ctx.Blogs.Add(blog);
-            ctx.SaveChanges();
+            #region 数据库连接接测试
+            //Models.DBContext ctx = new Models.DBContext();
+            //DateTime dateTime = DateTime.Now;
+            //var testData = System.IO.File.ReadAllText(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "testData.txt"));
+            //Models.BlogModel blog = new Models.BlogModel()
+            //{
+            //    Title = "Markdown测试",
+            //    SubTitle = "测试",
+            //    Author = "小明",
+            //    CreateTime = dateTime,
+            //    LastEditTime = dateTime,
+            //    MainBody = testData
+            //};
+            //ctx.Blogs.Add(blog);
+            //ctx.SaveChanges();
+            #endregion
+            #region 日志测试
+            //LogHelper.WriteLogDebug("测试");
+            //LogHelper.WriteLogException("测试");
+            //LogHelper.WriteLogException(new Exception("测试"));
+            //LogHelper.WriteLogExceptionUnhandled("测试");
+            //LogHelper.WriteLogTrace("测试");
+            //LogHelper.WriteLogWeb("测试");
+            #endregion
         }
     }
 }
