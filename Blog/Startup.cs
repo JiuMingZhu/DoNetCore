@@ -50,6 +50,7 @@ namespace Blog
             }
 
             DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+
             defaultFilesOptions.DefaultFileNames.Clear();//清除默认的default、index
             defaultFilesOptions.DefaultFileNames.Add("HomeView.cshtml");
             app.UseHttpsRedirection();
@@ -70,7 +71,7 @@ namespace Blog
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{count:int?}");
             });
         }
     }

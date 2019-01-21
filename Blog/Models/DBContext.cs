@@ -9,13 +9,18 @@ namespace Blog.Models
 {
     public class DBContext : DbContext
     {
+        public DBContext()
+        {
+        }
         public DbSet<BlogModel> Blogs { get; set; }
         /// <summary>
         /// 数据库配置
         /// </summary>
         /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySQL(Common.Tools.AppSettings.GetConfig("ConnectionStrings:Mysql"));//配置连接字符串
+        {
+            optionsBuilder.UseMySQL(Common.Tools.AppSettings.GetConfig("ConnectionStrings:Mysql"));//配置连接字符串
+        }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    base.OnModelCreating(modelBuilder);

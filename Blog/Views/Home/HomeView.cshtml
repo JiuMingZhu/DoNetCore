@@ -1,7 +1,6 @@
-﻿@model Microsoft.EntityFrameworkCore.DbSet<Blog.Models.BlogModel>
+﻿@model List<Blog.Models.BlogModel>
 @{
     ViewData["Title"] = "HomeView";
-    Layout = "~/Views/Shared/_MainBody.cshtml";
 }
 
 <h2>HomeView</h2>
@@ -20,8 +19,8 @@
         @{
             if (blog.MainBody.Contains("<!--more-->"))
             {
-                //blog.MainBody = blog.MainBody.Split("<!--more-->")[0];
-                //readMore = true;
+                blog.MainBody = blog.MainBody.Split("<!--more-->")[0];
+                readMore = true;
             }
             blog.MainBody = "\r\n" + blog.MainBody;//神奇的开头空格，先给个换行
         }
@@ -30,7 +29,8 @@
         @{
             if (readMore)
             {
-                <a href="#">阅读更多</a>
+                var link = "Article/"+blog.Id;
+                <a href="@link">阅读更多</a>
             }
         }
     </section>

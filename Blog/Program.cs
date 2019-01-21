@@ -23,22 +23,27 @@ namespace Blog
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
 
-        public static void test(){
+        public static void test()
+        {
             #region 数据库连接接测试
-            //Models.DBContext ctx = new Models.DBContext();
-            //DateTime dateTime = DateTime.Now;
-            //var testData = System.IO.File.ReadAllText(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "testData.txt"));
-            //Models.BlogModel blog = new Models.BlogModel()
+            //for(int i=0; i < 10; i++)
             //{
-            //    Title = "Markdown测试",
-            //    SubTitle = "测试",
-            //    Author = "小明",
-            //    CreateTime = dateTime,
-            //    LastEditTime = dateTime,
-            //    MainBody = testData
-            //};
-            //ctx.Blogs.Add(blog);
-            //ctx.SaveChanges();
+            //    Models.DBContext ctx = new Models.DBContext();
+            //    DateTime dateTime = DateTime.Now;
+            //    var testData = System.IO.File.ReadAllText(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "testData.txt"));
+            //    Models.BlogModel blog = new Models.BlogModel()
+            //    {
+            //        Title = "Markdown测试",
+            //        SubTitle = "测试",
+            //        Author = "小明",
+            //        CreateTime = dateTime,
+            //        LastEditTime = dateTime,
+            //        MainBody = testData
+            //    };
+
+            //    ctx.Blogs.Add(blog);
+            //    ctx.SaveChanges();
+            //}
             #endregion
             #region 日志测试
             //LogHelper.WriteLogDebug("测试");
