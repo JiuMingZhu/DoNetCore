@@ -1,0 +1,14 @@
+﻿@model Blog.Models.BlogModel
+@{
+    ViewData["Title"] = "ArticleView";
+}
+<section>
+    <p>@Model.Title</p>
+    <p>@Model.SubTitle</p>
+    <p>@Model.Author</p>
+    <p>@Model.CreateTime</p>
+    <p>@Model.LastEditTime</p>
+    <p>@Model.Tag</p>
+    <p>@Model.Category</p>
+    <pre class="markdown">@Model.MainBody</pre>
+</section>

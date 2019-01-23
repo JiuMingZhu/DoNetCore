@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "CategoriesView";
+}
+
+<h2>CategoriesView</h2>
+@{
+    var ModelType = ViewData.Model.GetType();
+    if (ModelType == typeof(List<string>))
+    {
+        foreach (var Category in Model)
+        {
+            <a href="/blog/@ViewData["action"]/@Category">@Category</a>
+        }
+    }
+    else if (ModelType == typeof(List<Blog.Models.BlogModel>))
+    {
+        @foreach (var blog in Model)
+        {
+            var link = "/blog/article?id=" + blog.Id;
+            <section>
+                <p>@blog.CreateTime</p>
+                <a href="@link">@blog.Title</a>
+            </section>
+        }
+    }
+}

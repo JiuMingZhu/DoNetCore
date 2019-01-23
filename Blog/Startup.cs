@@ -48,9 +48,7 @@ namespace Blog
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
             DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
-
             defaultFilesOptions.DefaultFileNames.Clear();//清除默认的default、index
             defaultFilesOptions.DefaultFileNames.Add("HomeView.cshtml");
             app.UseHttpsRedirection();
@@ -70,8 +68,15 @@ namespace Blog
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "pages",
+                    template: "{controller=Blog}/{action=Index}/{param:maxlength(128)}");
+                routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{count:int?}");
+                    template: "{controller=Blog}/{action=Index}");
+                //routes.MapRoute(
+                //    name: "article",
+                //    template: "{controller=Article}/{action=Index}/{id:int?}");
+
             });
         }
     }
