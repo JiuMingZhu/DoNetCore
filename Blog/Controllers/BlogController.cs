@@ -17,7 +17,8 @@ namespace Blog.Controllers
         /// <returns></returns>
         public IActionResult Index()
         {
-            return Home(10);
+            //return Home(10);
+            return View();
         }
 
         /// <summary>

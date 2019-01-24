@@ -8,17 +8,22 @@
     <title>_(:з」∠)_ </title>
     <link rel="stylesheet" href="@Url.Content("~/live2d/css/live2d.css")" />
     <link rel="stylesheet" href="~/css/Universal.css" />
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet">
 </head>
 <body>
     <header>
-        <p id="hitokoto">吾之初心，永世不忘</p>
-        <p id="hitokoto_from">吾之初心，永世不忘</p>
+        <div class="snow">
+            <p id="hitokoto">吾之初心，永世不忘</p>
+            <p id="hitokoto_from">吾之初心，永世不忘</p>
+        </div>
     </header>
-    <a href='/blog/home'>首页</a>
-    <a href='/blog/archives'>归档</a>
-    <a href='/blog/categories'>分类</a>
-    <a href='/blog/tags'>标签</a>
-    <a href='/blog/about'>关于</a>
+    <nav>
+        <a href='/blog/home'>首页</a>
+        <a href='/blog/archives'>归档</a>
+        <a href='/blog/categories'>分类</a>
+        <a href='/blog/tags'>标签</a>
+        <a href='/blog/about'>关于</a>
+    </nav>
     @RenderBody()
     <footer>
         <div id="landlord">

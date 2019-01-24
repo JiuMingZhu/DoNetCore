@@ -10,9 +10,10 @@
 /* 整体样式 */
 body {
     font-size: 12px;
-    margin: 10px;
     font-family: simsun;
     background: #fff;
+    height: 100%;
+    width: 100%;
 }
 
 /* 导航样式 */
@@ -27,8 +28,55 @@ nav > a {
 }
 
 /* 文章样式 */
-section#markdown{
+section#markdown {
     margin: auto;
     width: 50%;
     background: rgb(241, 229, 214);
 }
+
+/* Index页面 */
+body#index {
+    /* 隐藏滚动条 */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0px;
+}
+
+/* 模板区域 */
+@keyframes snow {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+
+    100% {
+        background-position: 500px 500px, 1000px 1000px;
+    }
+}
+
+header {
+    background-color: black;
+}
+
+    header > div.snow {
+        margin-top: 1%;
+        margin: 0 auto;
+        padding: 5px;
+        width: 70%;
+        background: url('../images/snow1.png'),url('../images/snow2.png');
+        animation: 10s snow linear infinite;
+    }
+
+    header > div > p {
+        color: rebeccapurple;
+        font-size: 47px;
+        font-family: 'ZCOOL KuaiLe', cursive;
+    }
+
+        header > div > p#hitokoto {
+            text-align: center;
+        }
+
+        header > div > p#hitokoto_from {
+            text-align: end;
+        }
+/* Home */
