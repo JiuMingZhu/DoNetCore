@@ -34,6 +34,19 @@ namespace Blog
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+
+            // 添加用户Session服务
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+
+            });
+
+            // 指定Session保存方式:分发内存缓存
+            services.AddDistributedMemoryCache();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +55,7 @@ namespace Blog
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UseDirectoryBrowser();
             }
             else
             {
@@ -64,6 +78,8 @@ namespace Blog
             });
             #endregion
 
+            //启用Session服务
+            app.UseSession();
             app.UseCookiePolicy();
             app.UseMvc(routes =>
             {

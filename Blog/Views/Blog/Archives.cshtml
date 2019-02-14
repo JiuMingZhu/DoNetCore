@@ -3,14 +3,15 @@
     ViewData["Title"] = "ArchivesView";
 }
 
-@{
-    @foreach (var blog in Model)
-    {
-        var link = "article?id=" + blog.Id;
-        <section>
-            <p>@blog.CreateTime</p>
-            <a href="@link">@blog.Title</a>
-        </section>
+<section>
+    @{
+        @foreach (var blog in Model)
+        {
+            var link = "article?id=" + blog.Id;
+            <div  class="items">
+                <p>@blog.CreateTime</p>
+                <a href="@link">@blog.Title</a>
+            </div>
+        }
     }
-}
-
+</section>

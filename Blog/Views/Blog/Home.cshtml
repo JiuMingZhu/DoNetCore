@@ -3,19 +3,19 @@
     ViewData["Title"] = "HomeView";
 }
 
-<h2>HomeView</h2>
-@foreach (var blog in Model)
-{
-    var readMore = false;
-    <section>
-        <p>@blog.Title</p>
-        <p>@blog.SubTitle</p>
-        <p>@blog.Author</p>
-        <p>@blog.CreateTime</p>
-        <p>@blog.LastEditTime</p>
-        <p>@blog.Tag</p>
-        <p>@blog.Category</p>
-        <pre class="markdown">
+<section>
+    @foreach (var blog in Model)
+    {
+        var readMore = false;
+        <div class="items">
+            <p>@blog.Title</p>
+            <p>@blog.SubTitle</p>
+            <p>@blog.Author</p>
+            <p>@blog.CreateTime</p>
+            <p>@blog.LastEditTime</p>
+            <p>@blog.Tag</p>
+            <p>@blog.Category</p>
+            <pre class="markdown">
         @{
             if (blog.MainBody.Contains("<!--more-->"))
             {
@@ -26,14 +26,15 @@
         }
         @blog.MainBody
         </pre>
-        @{
-            if (readMore)
-            {
-                var link = "blog/article?id="+blog.Id;
-                <a href="@link">阅读更多</a>
+            @{
+                if (readMore)
+                {
+                    var link = "article?id=" + blog.Id;
+                    <a href="@link">阅读更多</a>
+                }
             }
-        }
-    </section>
-    readMore = false;
-}
+        </div>
+        readMore = false;
+    }
+</section>
 

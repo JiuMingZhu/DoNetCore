@@ -3,12 +3,21 @@
     ViewData["Title"] = "ArticleView";
 }
 <section>
-    <p>@Model.Title</p>
-    <p>@Model.SubTitle</p>
-    <p>@Model.Author</p>
-    <p>@Model.CreateTime</p>
-    <p>@Model.LastEditTime</p>
-    <p>@Model.Tag</p>
-    <p>@Model.Category</p>
+    <div class="title_area">
+        <h1>@Model.Title</h1>
+        @{
+            if (!string.IsNullOrEmpty(Model.SubTitle))
+            {
+                <p>@Model.SubTitle</p>
+            }
+        }
+        @*<p>@Model.Author</p>*@
+        <p>@Model.CreateTime.ToString("yyyy-MM-dd")</p>
+        @*<p>@Model.LastEditTime</p>*@
+    </div>
     <pre class="markdown">@Model.MainBody</pre>
+    <div class="tag_area">
+        <p>@Model.Tag</p>
+        <p>@Model.Category</p>
+    </div>
 </section>

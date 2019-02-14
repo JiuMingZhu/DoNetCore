@@ -11,20 +11,10 @@
 body {
     font-size: 12px;
     font-family: simsun;
-    background: #fff;
+    background-color: black;
     height: 100%;
     width: 100%;
-}
-
-/* 导航样式 */
-* nav {
-    margin-top: 20px;
-    text-align: right;
-    padding-right: 25%;
-}
-
-nav > a {
-    margin: 0% 15px;
+    overflow-x: hidden;
 }
 
 /* 文章样式 */
@@ -79,4 +69,76 @@ header {
         header > div > p#hitokoto_from {
             text-align: end;
         }
-/* Home */
+
+/* Navigat */
+nav {
+    width: 100%;
+    text-align: right;
+    padding-right: 5%;
+}
+
+    nav > a {
+        /*font-family: 'VT323', monospace;*/
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 30px;
+        margin-right: 2%;
+        color: coral;
+    }
+
+        nav > a.currentPage {
+            /*font-family: 'VT323', monospace;*/
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 30px;
+            margin-right: 2%;
+            color: skyblue;
+        }
+
+        nav > a:hover {
+            font-family: 'VT323', monospace;
+            /*font-family: 'Shadows Into Light', cursive;*/
+            font-size: 30px;
+            margin-right: 2%;
+            color: crimson;
+        }
+
+
+
+/* 你的名字 */
+div.nan{
+    position:fixed;
+    top:40%;
+    left:2%;
+}
+div.nv {
+    position: fixed;
+    right:2%;
+    top:40%;
+}
+
+/* 复用 */
+section {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: antiquewhite;
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+    section > div {
+        text-align: left;
+        margin-left: 5%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    section > pre {
+        margin-left: 5%;
+    }
+
+div.items{
+    padding-top:10px;
+    padding-bottom:10px;
+}

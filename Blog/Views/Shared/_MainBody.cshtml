@@ -8,7 +8,11 @@
     <title>_(:з」∠)_ </title>
     <link rel="stylesheet" href="@Url.Content("~/live2d/css/live2d.css")" />
     <link rel="stylesheet" href="~/css/Universal.css" />
+    @*一言字体*@
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe" rel="stylesheet">
+    @*导航字体*@
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -18,13 +22,19 @@
         </div>
     </header>
     <nav>
-        <a href='/blog/home'>首页</a>
-        <a href='/blog/archives'>归档</a>
-        <a href='/blog/categories'>分类</a>
-        <a href='/blog/tags'>标签</a>
-        <a href='/blog/about'>关于</a>
+        <a href='/blog/home' id="home">Home</a>
+        <a href='/blog/archives' id="archives">Archives</a>
+        <a href='/blog/categories' id="categories">Categories</a>
+        <a href='/blog/tags' id="tags">Tags</a>
+        <a href='/blog/about' id="about">About</a>
     </nav>
+    <div class="nan">
+        <img src="~/images/backgrounds/long.png" />
+    </div>
     @RenderBody()
+    <div class="nv">
+        <img src="~/images/backgrounds/sanye.png" />
+    </div>
     <footer>
         <div id="landlord">
             <div class="message" style="opacity:0"></div>

@@ -42,6 +42,19 @@ jQuery(document).ready(function ($) {
     });
 });
 
+
+window.onload = function () {
+    var location = window.location.href;
+    var end = location.split('/');
+    var linknodes = ["home", "archives", "categories", "tags", "about"];
+    for (i = 0; i < linknodes.length;i++) {
+        if (end[end.length - 1].includes(linknodes[i]) || end[end.length - 2].includes(linknodes[i])) {
+            var linknode = document.getElementById(linknodes[i]);
+            linknode.className = "currentPage";
+            return;
+        }
+    }
+}
 /* MarkDown文章渲染 */
 //marked.setOptions({
 //    renderer: new marked.Renderer(),
@@ -67,5 +80,4 @@ var markdownTexts = document.getElementsByClassName('markdown')
 for (var i = 0; i < markdownTexts.length; i++) {
     markdownTexts[i].innerHTML = marked(markdownTexts[i].innerText);
 }
-
 hljs.initHighlightingOnLoad();

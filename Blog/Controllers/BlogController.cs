@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Blog.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Controllers
 {
@@ -47,6 +45,7 @@ namespace Blog.Controllers
         /// <returns></returns>
         public IActionResult Article([FromQuery]int? id)
         {
+            var userId = HttpContext.Session.GetInt32("UserId");
             if (id == null)
             {
                 return NotFound();
@@ -121,8 +120,27 @@ namespace Blog.Controllers
         /// <returns></returns>
         public IActionResult About()
         {
+            var userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return Redirect("/Blog/Login");
+            }
             DBContext ctx = new DBContext();
+            return View("~/Views/Blog/About.cshtml");
+        }
+
+        public IActionResult Admin()
+        {
             return View();
+        }
+
+        public IActionResult Login()
+        {
+            HttpContext.Session.SetInt32("UserId", new System.Random().Next(100000));
+            return Redirect("/Blog/About");
+            DBContext ctx = new DBContext();
+            return View("~/Views/Blog/About.cshtml");
+            //return View();
         }
     }
 }
