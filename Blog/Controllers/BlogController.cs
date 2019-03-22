@@ -52,6 +52,11 @@ namespace Blog.Controllers
             }
             DBContext ctx = new DBContext();
             var blog = ctx.Blogs.First(t => t.Id == id);
+            if(blog != null)
+            {
+                blog.ViewCount++;
+                ctx.SaveChangesAsync();
+            }
             return View(blog);
         }
 

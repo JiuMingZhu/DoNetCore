@@ -8,6 +8,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System.Text;
 
 namespace Blog
 {
@@ -15,7 +16,10 @@ namespace Blog
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             test();
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             CreateWebHostBuilder(args).Build().Run();
         }
 
@@ -26,7 +30,7 @@ namespace Blog
         public static void test()
         {
             #region 数据库连接接测试
-            //for(int i=0; i < 10; i++)
+            //for (int i = 0; i < 10; i++)
             //{
             //    Models.DBContext ctx = new Models.DBContext();
             //    DateTime dateTime = DateTime.Now;
@@ -44,14 +48,6 @@ namespace Blog
             //    ctx.Blogs.Add(blog);
             //    ctx.SaveChanges();
             //}
-            #endregion
-            #region 日志测试
-            //LogHelper.WriteLogDebug("测试");
-            //LogHelper.WriteLogException("测试");
-            //LogHelper.WriteLogException(new Exception("测试"));
-            //LogHelper.WriteLogExceptionUnhandled("测试");
-            //LogHelper.WriteLogTrace("测试");
-            //LogHelper.WriteLogWeb("测试");
             #endregion
         }
     }

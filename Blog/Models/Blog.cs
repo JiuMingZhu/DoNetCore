@@ -20,5 +20,7 @@ namespace Blog.Models
         public string Tag { get; set; }
         public string Category { get; set; }
         public string MainBody { get; set; }
+        public int? ViewCount { get; set; }
+        public int IsPrivate { get; set; }
     }
 }

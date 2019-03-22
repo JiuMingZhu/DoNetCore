@@ -1,144 +1,222 @@
 ﻿* {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /* 隐藏滚动条 */
 ::-webkit-scrollbar {
-    display: none
+	display: none
 }
 /* 整体样式 */
 body {
-    font-size: 12px;
-    font-family: simsun;
-    background-color: black;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
+	font-size: 12px;
+	font-family: simsun;
+	background-color: #6699ff;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 /* 文章样式 */
 section#markdown {
-    margin: auto;
-    width: 50%;
-    background: rgb(241, 229, 214);
+	margin: auto;
+	width: 50%;
+	background: rgb(241, 229, 214);
 }
 
 /* Index页面 */
 body#index {
-    /* 隐藏滚动条 */
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding: 0px;
+	/* 隐藏滚动条 */
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding: 0px;
 }
 
 /* 模板区域 */
 @keyframes snow {
-    0% {
-        background-position: 0 0, 0 0;
-    }
+	0% {
+		background-position: 0 0, 0 0;
+	}
 
-    100% {
-        background-position: 500px 500px, 1000px 1000px;
-    }
+	100% {
+		background-position: 500px 500px, 1000px 1000px;
+	}
 }
 
 header {
-    background-color: black;
+	background-color: #6699ff;
 }
 
-    header > div.snow {
-        margin-top: 1%;
-        margin: 0 auto;
-        padding: 5px;
-        width: 70%;
-        background: url('../images/snow1.png'),url('../images/snow2.png');
-        animation: 10s snow linear infinite;
-    }
+	header > div.snow {
+		margin-top: 1%;
+		margin: 0 auto;
+		padding: 5px;
+		width: 70%;
+		background: url('../images/snow1.png'),url('../images/snow2.png');
+		animation: 10s snow linear infinite;
+	}
 
-    header > div > p {
-        color: rebeccapurple;
-        font-size: 47px;
-        font-family: 'ZCOOL KuaiLe', cursive;
-    }
+	header > div > p {
+		color: rebeccapurple;
+		font-size: 47px;
+		font-family: 'ZCOOL KuaiLe', cursive;
+	}
 
-        header > div > p#hitokoto {
-            text-align: center;
-        }
+		header > div > p#hitokoto {
+			text-align: center;
+		}
 
-        header > div > p#hitokoto_from {
-            text-align: end;
-        }
+		header > div > p#hitokoto_from {
+			text-align: end;
+		}
 
 /* Navigat */
 nav {
-    width: 100%;
-    text-align: right;
-    padding-right: 5%;
+	width: 100%;
+	text-align: right;
+	padding-right: 5%;
 }
 
-    nav > a {
-        /*font-family: 'VT323', monospace;*/
-        font-family: 'Shadows Into Light', cursive;
-        font-size: 30px;
-        margin-right: 2%;
-        color: coral;
-    }
+	nav > a {
+		/*font-family: 'VT323', monospace;*/
+		font-family: 'Shadows Into Light', cursive;
+		font-size: 30px;
+		margin-right: 2%;
+		color: coral;
+	}
 
-        nav > a.currentPage {
-            /*font-family: 'VT323', monospace;*/
-            font-family: 'Shadows Into Light', cursive;
-            font-size: 30px;
-            margin-right: 2%;
-            color: skyblue;
-        }
+		nav > a.currentPage {
+			/*font-family: 'VT323', monospace;*/
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 30px;
+			margin-right: 2%;
+			color: #ff6666;
+		}
 
-        nav > a:hover {
-            font-family: 'VT323', monospace;
-            /*font-family: 'Shadows Into Light', cursive;*/
-            font-size: 30px;
-            margin-right: 2%;
-            color: crimson;
-        }
+		nav > a:hover {
+			font-family: 'VT323', monospace;
+			/*font-family: 'Shadows Into Light', cursive;*/
+			font-size: 30px;
+			margin-right: 2%;
+			color: #c0392b;
+		}
+/* Markdown整出来的文章样式 */
+pre {
+	white-space: pre-wrap;
+}
 
+	pre > p {
+		color: aliceblue;
+		line-height: 1.75;
+		margin-bottom: 1.2em;
+		font-size: 18px;
+	}
 
+		pre > p > a {
+			color: #9400D3;
+		}
 
+			pre > p > a:hover {
+				color: pink;
+			}
+
+	pre > blockquote > p {
+		display: block;
+		font-size: 18px;
+		background-color: rgba(211,211,211,05);
+		border-radius: 3px;
+		margin: 0;
+		padding: .2em .4em;
+	}
+
+	pre > table > thead {
+		display: table-header-group;
+		vertical-align: middle;
+		border-color: inherit;
+	}
+
+		pre > table > thead > tr {
+			display: table-row;
+			vertical-align: inherit;
+			border-color: inherit;
+		}
+
+			pre > table > thead > tr > th {
+				border-bottom-width: 2px;
+				border-top: 0;
+				color: white;
+				font-size: 15px;
+			}
+
+			pre > table > thead > tr > td {
+				border-bottom-width: 2px;
+				border-top: 0;
+			}
+
+	pre > table > tbody {
+		display: table-row-group;
+		vertical-align: middle;
+		border-color: inherit;
+	}
+
+		pre > table > tbody > tr {
+			background-color: rgba(211,211,211,05);
+			display: table-row;
+			vertical-align: middle;
+		}
+
+			pre > table > tbody > tr > th {
+				border: 1px solid #ddd;
+				padding: 8px;
+				line-height: 1.42857143;
+				vertical-align: top;
+			}
+
+			pre > table > tbody > tr > td {
+				border: 1px solid #ddd;
+				padding: 8px;
+				line-height: 1.42857143;
+				vertical-align: top;
+				font-size: 15px;
+			}
 /* 你的名字 */
-div.nan{
-    position:fixed;
-    top:40%;
-    left:2%;
+div.nan {
+	position: fixed;
+	top: 40%;
+	left: 2%;
 }
+
 div.nv {
-    position: fixed;
-    right:2%;
-    top:40%;
+	position: fixed;
+	right: 2%;
+	top: 40%;
 }
 
 /* 复用 */
 section {
-    width: 60%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: antiquewhite;
-    padding-left: 20px;
-    padding-right: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+	width: 60%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #9966ff;
+	padding-left: 20px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
-    section > div {
-        text-align: left;
-        margin-left: 5%;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    section > pre {
-        margin-left: 5%;
-    }
+	section > div {
+		text-align: left;
+		margin-left: 5%;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
 
-div.items{
-    padding-top:10px;
-    padding-bottom:10px;
+	section > pre {
+		margin-left: 5%;
+	}
+
+div.items {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
