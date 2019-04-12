@@ -49,6 +49,14 @@ namespace Blog
             //    ctx.SaveChanges();
             //}
             #endregion
+            #region 日志测试
+            //LogHelper.WriteLogDebug("测试");
+            //LogHelper.WriteLogException("测试");
+            //LogHelper.WriteLogException(new Exception("测试"));
+            //LogHelper.WriteLogExceptionUnhandled("测试");
+            //LogHelper.WriteLogTrace("测试");
+            //LogHelper.WriteLogWeb("测试");
+            #endregion
         }
     }
 }

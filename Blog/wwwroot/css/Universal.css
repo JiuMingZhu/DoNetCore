@@ -184,17 +184,20 @@ div.nan {
 	position: fixed;
 	top: 40%;
 	left: 2%;
+	z-index:999999999;
 }
 
 div.nv {
 	position: fixed;
 	right: 2%;
 	top: 40%;
+	z-index: 999999999;
 }
 
 /* 复用 */
 section {
 	width: 60%;
+	height: 100%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -219,4 +222,29 @@ section {
 div.items {
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+/* 文档编辑界面 */
+section > div#edit_area{
+	width: 70%;
+	height: 100%;
+	/* 居中显示 */
+	margin: 0 auto;
+}
+
+#editor {
+	height: 200vh;
+	/* position: absolute; */
+	font-size: 20px;
+}
+
+.ace_content {
+	margin-top: 0px;
+	width: 766px;
+	height: 508px;
+	margin-left: 0px;
+}
+
+.ace_gutter-cell {
+	height: 14px;
 }
